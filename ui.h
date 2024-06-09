@@ -70,6 +70,7 @@ typedef struct s_ui {
   bool    alertMode;        // LiPo alert is on
   int     lockMode;         // lock keyboard (1) with screen off (2)
   uint32_t lastGpsUpdateTime; // Last GPS display update time
+  uint16_t lastDistanceMax;  // Last auto-scale val
 } ui_t;
 
 extern ui_t ui;
@@ -104,6 +105,7 @@ bool manageConfigScreen(bool interactive, bool firstRun, bool onlyZone);
 bool displayConfigScreen(uint8_t selectedItem, uint8_t selectedColumn, uint8_t action, bool refreshAll, bool onlyZone);
 void LoRaMissing();
 void refreshDisco();
+void wioBeep(int ms);
 
 #define CONF_ACTION_NONE     0
 #define CONF_ACTION_MODIFY   1
